@@ -59,6 +59,30 @@ public class SortTestHelper {
 		double end = System.currentTimeMillis();
 		System.out.println(sortName+":"+((end-start)/1000)+"s");
 	}
+
+	//测试堆排序
+	public void testHeapSort1(String sortName,int n,int[] arr,HeapSort sort){
+		double start = System.currentTimeMillis();
+		sort.heapSort1(arr,n);
+		double end = System.currentTimeMillis();
+		System.out.println(sortName+":"+((end-start)/1000)+"s");
+	}
+
+	//测试改进后的堆排序，从第一个非叶子节点开始插入，相当于省去了一半的节点
+	public void testHeapSort2(String sortName,int n,int[] arr,HeapSort sort){
+		double start = System.currentTimeMillis();
+		sort.heapSort2(arr,n);
+		double end = System.currentTimeMillis();
+		System.out.println(sortName+":"+((end-start)/1000)+"s");
+	}
+
+	//测试改进后的堆排序，在空间范围为O（1）上进行操作，省去了new新的内存的时间
+	public void testHeapSort3(String sortName,int n,int[] arr,HeapSort sort){
+		double start = System.currentTimeMillis();
+		sort.heapSort3(arr,n);
+		double end = System.currentTimeMillis();
+		System.out.println(sortName+":"+((end-start)/1000)+"s");
+	}
 	
 	public boolean isSort(int n,int[] arr){
 		for(int i = 1;i<n;i++){
